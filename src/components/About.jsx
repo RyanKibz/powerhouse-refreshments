@@ -16,7 +16,7 @@ export default function About() {
         />
 
         {/* Hero Content */}
-        <div className="relative  max-w-4xl mx-auto space-y-4">
+        <div className="relative sticky max-w-4xl mx-auto space-y-4">
           <h1 className="text-4xl md:text-6xl font-black tracking-tight leading-tight">
             We Refresh the World. <br />
             <span className="text-sky-400">One Cup at a Time.</span>
