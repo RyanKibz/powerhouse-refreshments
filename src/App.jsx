@@ -1,39 +1,47 @@
-
-import { useState } from "react";
-import ProductForm from "./components/ProductForm";
+import { Route, Routes, NavLink } from "react-router";
+import Home from "./components/Home";
+import About from "./components/About";
+import ExpensesList from "./components/ProductList";
 
 export default function App() {
-  const [products, setProducts] = useState([]);
-
-  const handleAddProduct = (newProduct) => {
-    setProducts((prevProducts) => [
-      ...prevProducts,
-      newProduct,
-    ]);
-  };
+  // Navigation active state styling
+  const activelink = ({ isActive }) =>
+    `px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300 ${
+      isActive
+        ? "bg-sky-500 text-white shadow-md shadow-sky-500/20"
+        : "text-sky-600 hover:bg-slate-300 hover:text-gray-900"
+    }`;
 
   return (
-    <div>
-      <ProductForm onAddProduct={handleAddProduct} />
+    <div className="min-h-screen bg-slate-50 text-slate-800 antialiased">
+      {/* Navigation Header */}
+      <header className="bg-white border-b border-blue-200 sticky top-0 backdrop-blur">
+        <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+          <span className="font-black text-xl tracking-tight text-sky-600">
+            Powerhouse Beverages
+          </span>
+          <nav className="flex space-x-3">
+            <NavLink to="/" className={activelink}>
+              Home
+            </NavLink>
+            <NavLink to="/about" className={activelink}>
+              About
+            </NavLink>
+            {/* <NavLink to="/expenses" className={activelink}>
+              Expenses
+            </NavLink> */}
+          </nav>
+        </div>
+      </header>
 
-      <div className="p-6">
-
-        {products.map((product) => (
-          <div
-            key={product.id}
-            className="border p-4 mb-4 rounded"
-          >
-            <h3 className="font-bold text-xl">
-              {product.name}
-            </h3>
-
-            <p>Type: {product.type}</p>
-            <p>Description: {product.description}</p>
-            <p>Origin: {product.origin}</p>
-            <p>Health Benefits: {product.healthBenefits}</p>
-          </div>
-        ))}
-      </div>
+      {/* Main Content Area */}
+      <main className="max-w-6xl mx-auto px-6 py-10">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/expenses" element={<ExpensesList />} />
+        </Routes>
+      </main>
     </div>
   );
 }
