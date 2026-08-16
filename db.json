@@ -1,0 +1,40 @@
+{
+  "beverages": [
+    {
+      "id": 1,
+      "name": "Orange Juice",
+      "type": "Juice",
+      "description": "Fresh squeezed orange juice",
+      "origin": "Kenya",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdHc2YJyDBMawmZZhqMi-bLH_mSDGKB5OCsdD2GCaEqg&s=10",
+      "healthBenefits": "High in Vitamin C, supports immune system"
+    },
+    {
+      "id": 2,
+      "name": "Mango Smoothie",
+      "type": "Smoothie",
+      "description": "Creamy mango and yogurt blend",
+      "origin": "Uganda",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRABu96wOBnbBh_2WEbBtJdA9JcHrwqjZQLZgTwHV2yIQ&s=10",
+      "healthBenefits": "Rich in antioxidants and probiotics"
+    },
+    {
+      "id": 3,
+      "name": "Passion Fruit Drink",
+      "type": "Beverage",
+      "description": "Refreshing passion fruit juice",
+      "origin": "Kenya",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSTCQmZqBIxkwB5h9MyavbN1NkrKHqAaFI13K2-cAgZYqIHOG0ApR9ABLO&s=10",
+      "healthBenefits": "Boosts metabolism and energy levels"
+    },
+    {
+      "id": 4,
+      "name": "Coconut Water",
+      "type": "Drink",
+      "description": "Natural coconut water",
+      "origin": "Thailand",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSA7-I3Np0FQlrJYfTHX46XnJcUUJwdy__9EJku-WJcqw&s=10",
+      "healthBenefits": "Electrolytes and hydration"
+    }
+  ]
+}
