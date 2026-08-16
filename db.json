@@ -1,0 +1,40 @@
+{
+  "beverages": [
+    {
+      "id": 1,
+      "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Bagged_Milk_in_Store_(3293358107).jpg",
+      "name": "Classic Whole Milk",
+      "type": "Milk",
+      "description": "Fresh, creamy dairy milk",
+      "origin": "Kenya",
+      "healthBenefits": "Good source of calcium, protein, and vitamin D"
+    },
+    {
+      "id": 2,
+      "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Package_of_coffee_beans.JPG",
+      "name": "House Blend Coffee",
+      "type": "Coffee",
+      "description": "Dark roast, rich and bold flavor",
+      "origin": "Vietnam",
+      "healthBenefits": "Rich in antioxidants; may boost metabolism and focus"
+    },
+    {
+      "id": 3,
+      "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Tea_bags.jpg",
+      "name": "Chai Tea",
+      "type": "Tea",
+      "description": "Spiced black tea blend",
+      "origin": "India",
+      "healthBenefits": "Spices like ginger and cinnamon may aid digestion"
+    },
+    {
+      "id": 4,
+      "image": "https://commons.wikimedia.org/wiki/Special:FilePath/A_4_Litre_Cask_of_Australian_White_Wine.jpg",
+      "name": "Cabernet Sauvignon",
+      "type": "Wine",
+      "description": "Full-bodied red wine with dark fruit notes",
+      "origin": "France",
+      "healthBenefits": "Contains resveratrol, an antioxidant linked to heart health (in moderation)"
+    }
+  ]
+}
