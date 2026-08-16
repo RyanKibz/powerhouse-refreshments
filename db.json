@@ -1,40 +1,68 @@
 {
   "beverages": [
     {
-      "id": 1,
-      "name": "Orange Juice",
-      "type": "Juice",
-      "description": "Fresh squeezed orange juice",
+      "id": "1",
+      "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Bagged_Milk_in_Store_(3293358107).jpg",
+      "name": "Classic Whole Milk",
+      "type": "Milk",
+      "description": "Fresh, creamy dairy milk",
       "origin": "Kenya",
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdHc2YJyDBMawmZZhqMi-bLH_mSDGKB5OCsdD2GCaEqg&s=10",
-      "healthBenefits": "High in Vitamin C, supports immune system"
+      "healthBenefits": "Good source of calcium, protein, and vitamin D"
     },
     {
-      "id": 2,
-      "name": "Mango Smoothie",
-      "type": "Smoothie",
-      "description": "Creamy mango and yogurt blend",
-      "origin": "Uganda",
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRABu96wOBnbBh_2WEbBtJdA9JcHrwqjZQLZgTwHV2yIQ&s=10",
-      "healthBenefits": "Rich in antioxidants and probiotics"
+      "id": "2",
+      "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Package_of_coffee_beans.JPG",
+      "name": "House Blend Coffee",
+      "type": "Coffee",
+      "description": "Dark roast, rich and bold flavor",
+      "origin": "Vietnam",
+      "healthBenefits": "Rich in antioxidants; may boost metabolism and focus"
     },
     {
-      "id": 3,
-      "name": "Passion Fruit Drink",
-      "type": "Beverage",
-      "description": "Refreshing passion fruit juice",
-      "origin": "Kenya",
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSTCQmZqBIxkwB5h9MyavbN1NkrKHqAaFI13K2-cAgZYqIHOG0ApR9ABLO&s=10",
-      "healthBenefits": "Boosts metabolism and energy levels"
+      "id": "3",
+      "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Tea_bags.jpg",
+      "name": "Chai Tea",
+      "type": "Tea",
+      "description": "Spiced black tea blend",
+      "origin": "India",
+      "healthBenefits": "Spices like ginger and cinnamon may aid digestion"
     },
     {
-      "id": 4,
-      "name": "Coconut Water",
-      "type": "Drink",
-      "description": "Natural coconut water",
-      "origin": "Thailand",
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSA7-I3Np0FQlrJYfTHX46XnJcUUJwdy__9EJku-WJcqw&s=10",
-      "healthBenefits": "Electrolytes and hydration"
+      "id": "4",
+      "image": "https://commons.wikimedia.org/wiki/Special:FilePath/A_4_Litre_Cask_of_Australian_White_Wine.jpg",
+      "name": "Cabernet Sauvignon",
+      "type": "Wine",
+      "description": "Full-bodied red wine with dark fruit notes",
+      "origin": "France",
+      "healthBenefits": "Contains resveratrol, an antioxidant linked to heart health (in moderation)"
+    },
+    {
+      "id": "mB1NdTVA2Vk",
+      "image": "https://images.pexels.com/photos/31336111/pexels-photo-31336111.jpeg",
+      "name": "Milk shake",
+      "type": "Milk",
+      "description": "herbal milkshake",
+      "origin": "kenya",
+      "healthBenefits": "Fool of calcium"
+    },
+    {
+      "id": "593lGpoOMbk",
+      "image": "https://images.pexels.com/photos/31336111/pexels-photo-31336111.jpeg",
+      "name": "Milk shake",
+      "type": "Milk",
+      "description": "hgiuhuhuguy",
+      "origin": "kenya",
+      "healthBenefits": "rich in calcium"
+    },
+    {
+      "id": "ZpyoqXs5FCA",
+      "image": "https://unsplash.com/photos/cocktail-with-lime-and-rosemary-garnish-gA81ZTsql68",
+      "name": "cocktail",
+      "type": "Alcohol",
+      "description": "Refreshingly pure",
+      "origin": "kenya",
+      "healthBenefits": "juijiujhrufh3yuy3r4ty34y"
     }
-  ]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
