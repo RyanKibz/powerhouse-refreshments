@@ -4,7 +4,7 @@ import About from "./components/About"
 import Home from "./components/Home"
 import ProductForm from "./components/ProductForm";
 import ProductList from "./components/ProductList";
-// import ProductCard from "./components/ProductCard";
+
 
 
 export default function App() {
@@ -33,6 +33,9 @@ export default function App() {
             <NavLink to="/products" className={activelink}>
               Our Products
             </NavLink>
+            <NavLink to="/productform" className={activelink}>
+              Add Product
+            </NavLink>
           </nav>
         </div>
       </header>
@@ -44,6 +47,7 @@ export default function App() {
           <Route path="/about" element={<About />} />
           <Route path="/products" element={<ProductList />} />
           <Route path="/productform" element={<ProductForm />} />
+          
         </Routes>
       </main>
       <footer className="border-t border-slate-200 py-6 text-center text-xs font-bold uppercase tracking-widest text-slate-400">
