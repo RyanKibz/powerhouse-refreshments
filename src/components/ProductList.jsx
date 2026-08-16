@@ -43,4 +43,6 @@ function ExpensesList() {
 
 export default ExpensesList;
 
+  useEffect(() => {
+    const controller = new AbortController();
 
