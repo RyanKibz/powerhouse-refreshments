@@ -1,11 +1,8 @@
-import { NavLink} from "react-router-dom"
-import { Route, Routes } from "react-router-dom";
-import About from "./components/About"
-import Home from "./components/Home"
+import { NavLink, Route, Routes } from "react-router-dom";
+import About from "./components/About";
+import Home from "./components/Home";
 import ProductForm from "./components/ProductForm";
 import ProductList from "./components/ProductList";
-
-
 
 export default function App() {
   const activelink = ({ isActive }) =>
@@ -47,13 +44,12 @@ export default function App() {
           <Route path="/about" element={<About />} />
           <Route path="/products" element={<ProductList />} />
           <Route path="/productform" element={<ProductForm />} />
-          
         </Routes>
       </main>
+
       <footer className="border-t border-slate-200 py-6 text-center text-xs font-bold uppercase tracking-widest text-slate-400">
         © 2026 Powerhouse Beverages Company. All Rights Reserved.
       </footer>
     </div>
-  )
-} 
-      
+  );
+}
