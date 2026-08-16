@@ -28,7 +28,7 @@ export default function Home() {
           Discover our premium collection of energizing teas, artisanal coffees, and refreshing brewed beverages.
         </p>
 
-        {/* Action Buttons */}
+        
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link
             to="/products"
@@ -37,7 +37,7 @@ export default function Home() {
             Explore Drinks
           </Link>
           <Link
-            to="/about"
+            to="/products"
             className="w-full sm:w-auto bg-white/10 hover:bg-white/20 text-white font-semibold border border-white/20 rounded-xl px-8 py-3.5 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 backdrop-blur-sm"
           >
             Learn More

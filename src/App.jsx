@@ -4,7 +4,6 @@ import About from "./components/About";
 import ExpensesList from "./components/ProductList";
 
 export default function App() {
-  // Navigation active state styling
   const activelink = ({ isActive }) =>
     `px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300 ${
       isActive
@@ -27,9 +26,9 @@ export default function App() {
             <NavLink to="/about" className={activelink}>
               About
             </NavLink>
-            {/* <NavLink to="/expenses" className={activelink}>
-              Expenses
-            </NavLink> */}
+            <NavLink to="/products" className={activelink}>
+              Our Products
+            </NavLink>
           </nav>
         </div>
       </header>
@@ -42,6 +41,9 @@ export default function App() {
           <Route path="/expenses" element={<ExpensesList />} />
         </Routes>
       </main>
+      <footer className="border-t border-slate-200 py-6 text-center text-xs font-bold uppercase tracking-widest text-slate-400">
+        © 2026 Powerhouse Beverages Company. All Rights Reserved.
+      </footer>
     </div>
   );
 }
