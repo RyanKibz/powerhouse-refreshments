@@ -1,46 +1,98 @@
-// Lemmi replace ProducList with expenses.jsx from expense beverage router.
+import { useState, useEffect } from "react";
+import ProductCard from "./ProductCard";
 
+export default function ProductList() {
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-// Fixed: IDs must be completely unique so React doesn't glitch!
-const exp = [
-  { id: "exp-001", category: "Mammal Care", amount: 1234 },
-  { id: "exp-002", category: "Reptile Habitats", amount: 1234567 },
-  { id: "exp-003", category: "Pisces Setup", amount: 100878 },
-];
+  useEffect(() => {
+    async function fetchProducts() {
+      setLoading(true);
+      setError(null);
 
-function ExpensesList() {
+      try {
+        // Updated port to 3001
+        const response = await fetch("http://localhost:3001/beverages");
+
+        if (!response.ok) {
+          throw new Error(`Failed to load beverages (Status ${response.status})`);
+        }
+
+        const data = await response.json();
+        setProducts(data);
+      } catch (err) {
+        console.error("Error fetching products:", err);
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    fetchProducts();
+  }, []);
+
+  const handleDelete = (id) => {
+    setProducts(products.filter((product) => product.id !== id));
+  };
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-teal-600 mx-auto mb-4"></div>
+          <p className="text-gray-600 font-medium">Loading beverages...</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        <div className="bg-red-50 border border-red-200 rounded-lg p-8 text-center max-w-md">
+          <p className="text-red-600 font-semibold mb-2">Error Loading Products</p>
+          <p className="text-red-500 text-sm">{error}</p>
+          <button
+            onClick={() => window.location.reload()}
+            className="mt-4 px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors"
+          >
+            Retry
+          </button>
+        </div>
+      </div>
+    );
+  }
+
+  if (products.length === 0) {
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        <div className="text-center">
+          <p className="text-gray-600 font-medium text-lg">No beverages available</p>
+          <p className="text-gray-400 text-sm mt-2">Try again later</p>
+        </div>
+      </div>
+    );
+  }
+
   return (
-    <div className="bg-white border border-slate-200 rounded-2xl p-6 md:p-8 shadow-md">
-      <div className="border-b border-slate-200 pb-3 mb-4">
-        <h1 className="font-bold text-2xl text-slate-900 tracking-tight">
-          All My Expenses
-        </h1>
-        <p className="text-sm text-slate-300 mt-1">
-          A historical view of your logged expenditures.
+    <div className="w-full max-w-7xl mx-auto px-4 py-8">
+      <div className="mb-8">
+        <h1 className="text-4xl font-bold text-zinc-800 mb-2">Smoothies and Juices</h1>
+        <p className="text-gray-600">
+          Showing {products.length} {products.length === 1 ? "beverage" : "beverages"}
         </p>
       </div>
 
-      {/* Grid wrapper for cards */}
-      <ul className="grid grid-cols-1 md:grid-cols-3 gap-3">
-        {exp.map((item) => (
-          <li
-            key={item.id}
-            className="flex flex-col justify-between p-5 bg-slate-50 border border-slate-100 rounded-xl hover:border-sky-300 hover:shadow-md transition-all duration-200 group"
-          >
-            <span className="text-xs font-bold uppercase tracking-wider text-slate-400 group-hover:text-sky-600 transition-colors">
-              {item.category}
-            </span>
-            <span className="text-2xl font-black text-slate-800 mt-2">
-              ${item.amount.toLocaleString()}{" "}
-              {/* Adds neat commas to large numbers */}
-            </span>
-          </li>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        {products.map((product) => (
+          <ProductCard
+            key={product.id}
+            product={product} // ✅ Pass full product object here
+            onDelete={handleDelete}
+          />
         ))}
-      </ul>
+      </div>
     </div>
   );
 }
-
-export default ExpensesList;
-
-

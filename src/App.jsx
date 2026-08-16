@@ -1,7 +1,8 @@
-import { Route, Routes, NavLink } from "react-router";
-import Home from "./components/Home";
-import About from "./components/About";
-import ExpensesList from "./components/ProductList";
+import { useState } from "react";
+import ProductForm from "./components/ProductForm";
+import ProductList from "./components/ProductList";
+import ProductCard from "./components/ProductCard";
+import db from "../db.json";
 
 export default function App() {
   const activelink = ({ isActive }) =>
@@ -44,6 +45,21 @@ export default function App() {
       <footer className="border-t border-slate-200 py-6 text-center text-xs font-bold uppercase tracking-widest text-slate-400">
         © 2026 Powerhouse Beverages Company. All Rights Reserved.
       </footer>
+function App() {
+  const [products, setProducts] = useState([]);
+  const handleAddProduct = (newProduct) => {
+    setProducts((prev) => [...prev, newProduct]);
+  };
+
+  return (
+    <div className="min-h-screen bg-zinc-100 py-8">
+      <div className="max-w-6xl mx-auto space-y-8">
+        <ProductForm onAddProduct={handleAddProduct} />
+        <ProductList products={products} setProducts={setProducts} />
+        <ProductCard products={products} setProducts={setProducts} />
+      </div>
     </div>
   );
 }
+
+export default App;
