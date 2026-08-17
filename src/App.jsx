@@ -4,6 +4,7 @@ import Home from "./components/Home";
 import ProductForm from "./components/ProductForm";
 import ProductList from "./components/ProductList";
 
+
 export default function App() {
   const activelink = ({ isActive }) =>
     `px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300 ${
@@ -14,8 +15,8 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-800 antialiased">
-      {/* Navigation Header */}
-      <header className="bg-white border-b border-blue-200 sticky top-0 backdrop-blur">
+      
+      <header className="bg-white z-50 border-b border-blue-200 sticky top-0 backdrop-blur">
         <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
           <span className="font-black text-xl tracking-tight text-sky-600">
             Powerhouse Beverages
@@ -37,7 +38,7 @@ export default function App() {
         </div>
       </header>
 
-      {/* Main Content Area */}
+      
       <main className="max-w-6xl mx-auto px-6 py-10">
         <Routes>
           <Route path="/" element={<Home />} />

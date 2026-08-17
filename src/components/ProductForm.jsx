@@ -103,9 +103,10 @@ export default function ProductForm() {
 
         <div>
           <label className="block text-sm font-semibold text-zinc-700 mb-1">Health Benefits</label>
-          <input
+          <textarea
             type="text"
             name="healthBenefits"
+            rows="3"
             value={formData.healthBenefits}
             onChange={handleChange}
             className="w-full border border-zinc-300 rounded-lg p-2.5 text-sm focus:ring-2 focus:ring-sky-500 outline-none"

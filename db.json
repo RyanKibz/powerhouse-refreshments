@@ -55,22 +55,13 @@
       "healthBenefits": "rich in calcium"
     },
     {
-      "id": "ZpyoqXs5FCA",
-      "image": "https://unsplash.com/photos/cocktail-with-lime-and-rosemary-garnish-gA81ZTsql68",
-      "name": "cocktail",
-      "type": "Alcohol",
-      "description": "Refreshingly pure",
-      "origin": "kenya",
-      "healthBenefits": "juijiujhrufh3yuy3r4ty34y"
-    },
-    {
-      "name": "Vanilla",
+      "name": "Vanilla milkshake",
       "type": "Smoothie",
-      "description": "Sweetness",
-      "origin": "",
-      "healthBenefits": "",
-      "image": "",
-      "id": "SZfZXnL_EiM"
+      "description": "Done with love. Additional toppings include cherries and sprinkles",
+      "origin": "Kenya",
+      "healthBenefits": "Good for gaining weight. Filling!",
+      "image": "https://www.allrecipes.com/recipe/48974/vanilla-milkshake-i/",
+      "id": "GK5PdUcjBVo"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

@@ -91,7 +91,7 @@ export default function ProductList() {
   return (
     <div className="w-full max-w-7xl mx-auto px-4 py-8">
       <div className="mb-8">
-        <h1 className="text-4xl font-bold text-zinc-800 mb-2">Smoothies and Juices</h1>
+        <h1 className="text-4xl font-bold text-zinc-800 mb-2">Our Beverages</h1>
         <p className="text-gray-600">
           Showing {products.length} {products.length === 1 ? "beverage" : "beverages"}
         </p>
