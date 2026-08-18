@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { Link } from 'react-router-dom';
 
 export default function Home() {
@@ -17,13 +17,13 @@ export default function Home() {
           Powerhouse Beverages
         </span>
 
-        {/* Main Heading */}
+        
         <h1 className="font-black text-4xl md:text-6xl mb-6 text-white tracking-tight leading-tight">
           Fuel Your Day with <br />
           <span className="text-sky-300">Powerhouse Drinks.</span>
         </h1>
 
-        {/* Subtitle */}
+        
         <p className="text-blue-500 text-lg md:text-xl font-normal mb-8 max-w-md mx-auto leading-relaxed drop-shadow">
           Discover our premium collection of energizing teas, artisanal coffees, and refreshing brewed beverages.
         </p>

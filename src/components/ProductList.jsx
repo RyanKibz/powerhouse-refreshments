@@ -12,7 +12,6 @@ export default function ProductList() {
       setError(null);
 
       try {
-        // Updated port to 3001
         const response = await fetch("http://localhost:3001/beverages");
 
         if (!response.ok) {
@@ -32,13 +31,27 @@ export default function ProductList() {
     fetchProducts();
   }, []);
 
-  const handleDelete = (id) => {
-    setProducts(products.filter((product) => product.id !== id));
+  const handleDelete = async (id) => {
+    try {
+      const response = await fetch(`http://localhost:3001/beverages/${id}`, {
+        method: "DELETE",
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to delete product from server");
+      }
+
+      // Update state after successful server deletion
+      setProducts((prev) => prev.filter((product) => product.id !== id));
+    } catch (err) {
+      console.error("Delete error:", err);
+      alert("Could not delete product. Check if json-server is running.");
+    }
   };
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center min-h-screen">
+      <div className="flex items-center justify-center min-h-[50vh]">
         <div className="text-center">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-teal-600 mx-auto mb-4"></div>
           <p className="text-gray-600 font-medium">Loading beverages...</p>
@@ -49,7 +62,7 @@ export default function ProductList() {
 
   if (error) {
     return (
-      <div className="flex items-center justify-center min-h-screen">
+      <div className="flex items-center justify-center min-h-[50vh]">
         <div className="bg-red-50 border border-red-200 rounded-lg p-8 text-center max-w-md">
           <p className="text-red-600 font-semibold mb-2">Error Loading Products</p>
           <p className="text-red-500 text-sm">{error}</p>
@@ -66,10 +79,10 @@ export default function ProductList() {
 
   if (products.length === 0) {
     return (
-      <div className="flex items-center justify-center min-h-screen">
+      <div className="flex items-center justify-center min-h-[50vh]">
         <div className="text-center">
           <p className="text-gray-600 font-medium text-lg">No beverages available</p>
-          <p className="text-gray-400 text-sm mt-2">Try again later</p>
+          <p className="text-gray-400 text-sm mt-2">Try adding one through the form</p>
         </div>
       </div>
     );
@@ -78,7 +91,7 @@ export default function ProductList() {
   return (
     <div className="w-full max-w-7xl mx-auto px-4 py-8">
       <div className="mb-8">
-        <h1 className="text-4xl font-bold text-zinc-800 mb-2">Smoothies and Juices</h1>
+        <h1 className="text-4xl font-bold text-zinc-800 mb-2">Our Beverages</h1>
         <p className="text-gray-600">
           Showing {products.length} {products.length === 1 ? "beverage" : "beverages"}
         </p>
@@ -88,7 +101,7 @@ export default function ProductList() {
         {products.map((product) => (
           <ProductCard
             key={product.id}
-            product={product} // ✅ Pass full product object here
+            product={product}
             onDelete={handleDelete}
           />
         ))}
