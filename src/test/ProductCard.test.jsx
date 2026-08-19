@@ -15,25 +15,25 @@ describe("Productcard", () => {
     image: "https://example.com/orange-juice.jpg",
   };
 
-  // Test 1: Component returns null when product prop is null
+  
   it("should render nothing when product prop is null", () => {
     const { container } = render(<ProductCard product={null} />);
     expect(container.firstChild).toBeNull();
   });
 
-  // Test 2: Component returns null when product prop is undefined
+  
   it("should render nothing when product prop is undefined", () => {
     const { container } = render(<ProductCard product={undefined} />);
     expect(container.firstChild).toBeNull();
   });
 
-  // Test 3: Renders product name correctly
+  
   it("should render product name", () => {
     render(<ProductCard product={mockProduct} />);
     expect(screen.getByText("Orange Juice")).toBeInTheDocument();
   });
 
-  // Test 4: Renders product description correctly
+  
   it("should render product description", () => {
     render(<ProductCard product={mockProduct} />);
     expect(
@@ -41,23 +41,23 @@ describe("Productcard", () => {
     ).toBeInTheDocument();
   });
 
-  // Test 5: Renders type badge when type exists
+  
   it("should render type badge when type is provided", () => {
     render(<ProductCard product={mockProduct} />);
     expect(screen.getByText("Juice")).toBeInTheDocument();
-    // Type badge should have uppercase tracking
+    
     const typeBadge = screen.getByText("Juice");
     expect(typeBadge).toHaveClass("uppercase");
   });
 
-  // Test 6: Does not render type badge when type is missing
+  
   it("should not render type badge when type is not provided", () => {
     const productWithoutType = { ...mockProduct, type: null };
     render(<ProductCard product={productWithoutType} />);
     expect(screen.getByText("Orange Juice")).toBeInTheDocument()
   });
 
-  // Test 7: Renders origin badge when origin exists
+  
   it("should render origin badge when origin is provided", () => {
     render(<ProductCard product={mockProduct} />);
     expect(screen.getByText("Kenya")).toBeInTheDocument();
@@ -70,7 +70,7 @@ describe("Productcard", () => {
     expect(screen.getByText("Orange Juice")).toBeInTheDocument();
   });
 
-  // Test 9: Renders health benefits section when provided
+  
   it("should render health benefits section when healthBenefits is provided", () => {
     render(<ProductCard product={mockProduct} />);
     expect(screen.getByText("Health Benefits")).toBeInTheDocument();
