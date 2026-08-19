@@ -44,10 +44,11 @@ export default function ProductForm() {
       <h2 className="text-2xl font-bold text-zinc-800 mb-6">Add New Beverage</h2>
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
-          <label className="block text-sm font-semibold text-zinc-700 mb-1">Name</label>
+          <label htmlFor="name" className="block text-sm font-semibold text-zinc-700 mb-1">Name</label>
           <input
             type="text"
             name="name"
+            id="name"
             required
             value={formData.name}
             onChange={handleChange}
@@ -57,9 +58,10 @@ export default function ProductForm() {
 
         <div className="grid grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-semibold text-zinc-700 mb-1">Type (e.g., Juice, Smoothie)</label>
+            <label htmlFor="type" className="block text-sm font-semibold text-zinc-700 mb-1">Type (e.g., Juice, Smoothie)</label>
             <input
               type="text"
+              id="type"
               name="type"
               value={formData.type}
               onChange={handleChange}
@@ -67,9 +69,10 @@ export default function ProductForm() {
             />
           </div>
           <div>
-            <label className="block text-sm font-semibold text-zinc-700 mb-1">Origin</label>
+            <label htmlFor="origin" className="block text-sm font-semibold text-zinc-700 mb-1">Origin</label>
             <input
               type="text"
+              id="origin"
               name="origin"
               value={formData.origin}
               onChange={handleChange}
@@ -79,9 +82,10 @@ export default function ProductForm() {
         </div>
 
         <div>
-          <label className="block text-sm font-semibold text-zinc-700 mb-1">Image URL</label>
+          <label htmlFor="image" className="block text-sm font-semibold text-zinc-700 mb-1">Image URL</label>
           <input
             type="url"
+            id="image"
             name="image"
             placeholder="https://..."
             value={formData.image}
@@ -91,9 +95,10 @@ export default function ProductForm() {
         </div>
 
         <div>
-          <label className="block text-sm font-semibold text-zinc-700 mb-1">Description</label>
+          <label htmlFor="description" className="block text-sm font-semibold text-zinc-700 mb-1">Description</label>
           <textarea
             name="description"
+            id="description"
             rows="3"
             value={formData.description}
             onChange={handleChange}
@@ -102,10 +107,11 @@ export default function ProductForm() {
         </div>
 
         <div>
-          <label className="block text-sm font-semibold text-zinc-700 mb-1">Health Benefits</label>
+          <label htmlFor="healthBenefits" className="block text-sm font-semibold text-zinc-700 mb-1">Health Benefits</label>
           <textarea
             type="text"
             name="healthBenefits"
+            id="healthBenefits"
             rows="3"
             value={formData.healthBenefits}
             onChange={handleChange}
