@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import ProductCard from "./ProductCard";
 
 export default function ProductList() {

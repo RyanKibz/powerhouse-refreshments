@@ -1,7 +1,7 @@
 import React from "react";
 import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
 import { render, screen, waitFor, fireEvent, cleanup } from "@testing-library/react";
-import ProductList from "./components/ProductList";
+import ProductList from "../components/ProductList";
 
 vi.mock("./components/ProductCard", () => ({
   default: ({ product, onDelete }) =>
